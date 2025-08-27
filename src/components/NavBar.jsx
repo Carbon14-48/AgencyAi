@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import assets from "../../assets/assets";
 
-export default function NavBar({ theme, setTheme }) {
+export default function NavBar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70">
-      <img
-        src={theme === "dark" ? assets.logo_dark : assets.logo}
-        alt="Agency Ai Logo"
-        className="w-32 sm:w-40"
-      />
+      <picture className="w-32 sm:w-40">
+        <source
+          media="(prefers-color-scheme: dark)"
+          srcSet={assets.logo_dark}
+        />
+        <img src={assets.logo} alt="Agency Ai Logo" className="w-32 sm:w-40" />
+      </picture>
 
       <div
         className={`text-gray-700 dark:text-white sm:text-xl ${
@@ -38,7 +40,6 @@ export default function NavBar({ theme, setTheme }) {
           Contact Us
         </a>
       </div>
-
       <div className="flex items-center gap-4">
         <a
           href="#contact-us"
@@ -47,13 +48,18 @@ export default function NavBar({ theme, setTheme }) {
           <span>Connect</span>
           <img src={assets.arrow_icon} width={14} alt="Contact Us Button" />
         </a>
-
-        <img
-          src={theme === "dark" ? assets.menu_icon_dark : assets.menu_icon}
-          alt="menu icon"
-          onClick={() => setSidebarOpen(true)}
-          className="w-8 sm:hidden cursor-pointer"
-        />
+        <picture className="w-8 sm:hidden cursor-pointer">
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcSet={assets.menu_icon_dark}
+          />
+          <img
+            src={assets.menu_icon}
+            alt="menu icon"
+            onClick={() => setSidebarOpen(true)}
+            className="w-8 cursor-pointer"
+          />
+        </picture>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ export default function NavBar() {
         className={`text-gray-700 dark:text-white sm:text-xl ${
           !sidebarOpen
             ? `max-sm:w-0 overflow-hidden`
-            : `max-sm:w-60 max-sm:pl-1`
+            : `max-sm:w-56 max-sm:pl-1`
         } max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-1/2 max-sm:flex-col max-sm:bg-primary max-sm:text-xl max-sm:text-white max-sm:pt-20 flex sm:items-center gap-5 transition-all`}
       >
         <img

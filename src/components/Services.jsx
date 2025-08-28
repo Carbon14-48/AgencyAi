@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import assets from "../../assets/assets";
 import Title from "./Title";
 import ServiceCard from "./ServiceCard";
-
+import { motion } from "motion/react";
 export default function Services() {
   const servicesData = [
     {
@@ -30,7 +31,11 @@ export default function Services() {
     },
   ];
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.2 }}
       id="services"
       className="relative flex flex-col items-center
     gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white"
@@ -44,6 +49,6 @@ export default function Services() {
           return <ServiceCard key={index} service={service} index={index} />;
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }

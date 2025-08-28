@@ -1,19 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #5044e5;
+  --default-transition-duration: 150ms;
+
+  --color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.dark) {
+    color-scheme: light !important;
+  }
+}
+
+.dark {
+  color-scheme: dark !important;
+}
+
+@variant dark (.dark &);
+
 * {
   font-family: "Libertinus Serif Display", system-ui;
   font-weight: 600;
-}
-
-@theme {
-  --color-primary: #5044e5;
-}
-
-@layer utilities {
-  .dark\:bg-primary {
-    &:where(.dark, .dark *) {
-      background-color: var(--color-primary);
-    }
-  }
 }

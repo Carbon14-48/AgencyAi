@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first, then system preference, default to light
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) return savedTheme;
 
@@ -13,29 +13,18 @@ function App() {
     return prefersDark ? "dark" : "light";
   });
 
-  // Apply theme changes to document
   useEffect(() => {
     const root = document.documentElement;
-
-    if (theme === "dark") {
-      root.style.colorScheme = "dark";
-      root.classList.add("dark");
-    } else {
-      root.style.colorScheme = "light";
-      root.classList.remove("dark");
-    }
-
-    // Save to localStorage
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+    root.style.colorScheme = theme;
+    root.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
-
   return (
-    <div
-      className={`min-h-screen transition-colors duration-200 ${
-        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
-      }`}
-    >
+    <div className="min-h-screen transition-colors duration-200 bg-white dark:bg-black text-black dark:text-white">
       <NavBar theme={theme} setTheme={setTheme} />
+      <Hero />
     </div>
   );
 }

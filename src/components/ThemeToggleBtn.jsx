@@ -3,12 +3,9 @@ import assets from "../../assets/assets";
 
 export default function ThemeToggleBtn({ theme, setTheme }) {
   const toggleTheme = () => {
-    console.log("Current theme:", theme); // Debug log
     const newTheme = theme === "dark" ? "light" : "dark";
-    console.log("Switching to:", newTheme); // Debug log
     setTheme(newTheme);
   };
-
   return (
     <button
       onClick={toggleTheme}

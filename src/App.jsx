@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
-
+import TrustedBy from "./components/TrustedBy";
+import Services from "./components/Services";
 function App() {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -25,6 +26,8 @@ function App() {
     <div className="min-h-screen transition-colors duration-200 bg-white dark:bg-black text-black dark:text-white">
       <NavBar theme={theme} setTheme={setTheme} />
       <Hero />
+      <TrustedBy />
+      <Services />
     </div>
   );
 }

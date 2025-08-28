@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import TrustedBy from "./components/TrustedBy";
 import Services from "./components/Services";
+import OurWork from "./components/OurWork";
+import Teams from "./components/Teams";
 function App() {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -28,6 +30,8 @@ function App() {
       <Hero />
       <TrustedBy />
       <Services />
+      <OurWork />
+      <Teams />
     </div>
   );
 }

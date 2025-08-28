@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import assets from "../../assets/assets";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
@@ -9,7 +11,13 @@ export default function Hero() {
   py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden
   text-gray-700 dark:text-gray-300"
     >
-      <div className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 p-1.5 pr-4 rounded-full bg-white dark:bg-black">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        viewport={{ once: true }}
+        className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 p-1.5 pr-4 rounded-full bg-white dark:bg-black"
+      >
         <img
           className="w-20"
           src={assets.group_profile}
@@ -18,8 +26,12 @@ export default function Hero() {
         <p className="text-xl font-medium text-black dark:text-white">
           Trusted By 100k+ people
         </p>
-      </div>
-      <h1
+      </motion.div>
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        viewport={{ once: true }}
         className="text-4xl sm:text-5xl md:text-6xl xl:text-[84px] font-medium 
       xl:leading-[95px] max-w-5xl"
       >
@@ -31,21 +43,31 @@ export default function Hero() {
           Digital{" "}
         </span>
         Impact.
-      </h1>
-      <p
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        viewport={{ once: true }}
         className="text-sm sm:text-lg font-medium text-gray-500 dark:text-white/75
       max-w-4/5 sm:max-w-lg pb-3"
       >
         Creating meaningful connections and turning big ideas into interactive
         digital experiences.
-      </p>
-      <div className="relative">
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 2 }}
+        viewport={{ once: true }}
+        className="relative"
+      >
         <img
           src={assets.hero_img}
           alt="hero image Of the two girls sitting looking into a Laptop"
           className="w-full max-w-6xl"
         />
-      </div>
+      </motion.div>
     </div>
   );
 }

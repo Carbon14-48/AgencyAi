@@ -8,7 +8,6 @@ import Teams from "./components/Teams";
 import ContactUs from "./components/ContactUs";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
-
 function App() {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");

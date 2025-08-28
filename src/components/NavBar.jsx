@@ -1,12 +1,17 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import assets from "../../assets/assets";
 import ThemeToggleBtn from "./ThemeToggleBtn";
+import { motion } from "motion/react";
 
 export default function NavBar({ theme, setTheme }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium transition-colors duration-200 ${
         theme === "dark"
           ? "bg-gray-900/70 text-white"
@@ -97,6 +102,6 @@ export default function NavBar({ theme, setTheme }) {
           )}
         </picture>
       </div>
-    </div>
+    </motion.div>
   );
 }

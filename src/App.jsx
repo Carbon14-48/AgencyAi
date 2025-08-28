@@ -5,6 +5,7 @@ import TrustedBy from "./components/TrustedBy";
 import Services from "./components/Services";
 import OurWork from "./components/OurWork";
 import Teams from "./components/Teams";
+import ContactUs from "./components/ContactUs";
 function App() {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -32,6 +33,7 @@ function App() {
       <Services />
       <OurWork />
       <Teams />
+      <ContactUs />
     </div>
   );
 }

@@ -9,24 +9,24 @@ export default function Services() {
       title: "Advertising",
       description:
         "we turn bold ideas into powerful digital solutions that connect, engage ...",
-      icons: assets.ads_icon,
+      icon: assets.ads_icon,
     },
     {
       title: "Content Marketing",
-      description: "We help you execute your plan and deliver results .",
-      icons: assets.marketing_icon,
+      description: "We help you execute your plan and deliver results.",
+      icon: assets.marketing_icon,
     },
     {
       title: "Content Writing ",
       description:
-        "We help you create a marketing Strategy  that drives results .",
-      icons: assets.content_icon,
+        "We help you create a marketing Strategy that drives results.",
+      icon: assets.content_icon,
     },
     {
       title: "Social Media",
       description:
-        "We help you Build a srong social media presence and engage with your audience .",
-      icons: assets.social_icon,
+        "We help you Build a srong social media presence and engage with your audience.",
+      icon: assets.social_icon,
     },
   ];
   return (
